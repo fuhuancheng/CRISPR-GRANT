@@ -44,10 +44,9 @@ System requirements:
 Download the GRACIOUS package from website
 (<https://github.com/fuhuancheng/GRACIOUS/releases>), uncompressed it,
 go to the folder and click to open the program. The GUI would look like
-Fig[1](#fig:mac-gui){reference-type="ref" reference="fig:mac-gui"}.
+Fig[1](#fig:mac-gui).
 
-![GUI example](doc/figures/mac-gui2.png){#fig:mac-gui
-width="0.8\\linewidth"}
+![GUI example](doc/figures/mac-gui2.png)
 
 The usage of GRACIOUS is simple and intuitive.
 
@@ -63,8 +62,7 @@ Required files or inputs for analysis:
 -   Output folder for analysis results.
 
 Analysis for amplicon or pooled amplicons includes steps
-(Fig[2](#fig:amplicon-gui){reference-type="ref"
-reference="fig:amplicon-gui"}):
+(Fig[2](#fig:amplicon-gui)):
 
 1.  Press \"Browse\" button to select FASTQ file 1 and 2.
 
@@ -79,8 +77,7 @@ reference="fig:amplicon-gui"}):
 6.  When finished, go to the result folder to check the result files.
 
 ![Steps for amplicon(s)
-analysis](doc/figures/amplicon-gui.png){#fig:amplicon-gui
-width="0.8\\linewidth"}
+analysis](doc/figures/amplicon-gui.png)
 
 Usage for WGS (whole genome sequencing) analysis
 ================================================
@@ -101,10 +98,10 @@ to download genome sequence for a variety of organisms from UCSC
 (<https://hgdownload.soe.ucsc.edu/downloads.html>) or NCBI
 (<https://www.ncbi.nlm.nih.gov/genome/>). The downloaded genome sequence
 should be in FASTA format (see
-section[4.1.2](#sec:fasta){reference-type="ref" reference="sec:fasta"}).
+section[4.1.2](#sec:fasta)).
 
 Analysis for WGS include steps
-(Fig[3](#fig:wgs-gui){reference-type="ref" reference="fig:wgs-gui"}):
+(Fig[3](#fig:wgs-gui)):
 
 1.  Press \"Browse\" button to select FASTQ file 1 and 2.
 
@@ -118,8 +115,7 @@ Analysis for WGS include steps
 
 6.  When finished, go to the result folder to check the result files.
 
-![Steps for WGS analysis](doc/figures/wgs-gui.png){#fig:wgs-gui
-width="0.8\\linewidth"}
+![Steps for WGS analysis](doc/figures/wgs-gui.png)
 
 Input file format
 -----------------
@@ -160,21 +156,18 @@ Result files
 ### Alignment of top counts
 
 In the result folder, the alignment of top count sequences will be
-given, as shown in fig[4](#fig:align){reference-type="ref"
-reference="fig:align"}.
+given, as shown in fig[4](#fig:align).
 
-![Example of alignment plot](doc/figures/top_alignment.png){#fig:align
-width="\\textwidth"}
+![Example of alignment plot](doc/figures/top_alignment.png)
 
 ### Indel frequency along sequence
 
 In the result folder, the plot of indel frequency along sequence will
 also be given, as shown in
-figure[5](#fig:indel-freq){reference-type="ref"
-reference="fig:indel-freq"}.
+figure[5](#fig:indel-freq).
 
 ![Example of indel frequency along
-sequence](doc/figures/freq-plot.png){#fig:indel-freq width="\\textwidth"}
+sequence](doc/figures/freq-plot.png)
 
 ### Basic statistics
 
@@ -261,12 +254,10 @@ Additional parameters for FLASH
 
 Additional options, if necessary, can be added and passed directly to
 internally used tools in Additional Options tab
-(Fig[6](#fig:additional-options){reference-type="ref"
-reference="fig:additional-options"}).
+(Fig[6](#fig:additional-options)).
 
 ![GUI of additional
-options](doc/figures/additional_options.png){#fig:additional-options
-width="\\textwidth"}
+options](doc/figures/additional_options.png)
 
 Here are all available additional options for flash. Detailed additional
 parameters for FLASH can be accessed by execute command \"flash -h\" in
