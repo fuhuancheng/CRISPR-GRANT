@@ -1,10 +1,3 @@
----
-author:
-- 'Huancheng Fu (fuhuancheng\@foxmail.com)'
-title: 'GRACIOUS: Graphical CRISPR Indel Analysis Tool for
-  Cross-platform Offline Use'
----
-
 Introduction
 ============
 
@@ -53,7 +46,7 @@ Download the GRACIOUS package from website
 go to the folder and click to open the program. The GUI would look like
 Fig[1](#fig:mac-gui){reference-type="ref" reference="fig:mac-gui"}.
 
-![GUI example](figures/mac-gui2.png){#fig:mac-gui
+![GUI example](doc/figures/mac-gui2.png){#fig:mac-gui
 width="0.8\\linewidth"}
 
 The usage of GRACIOUS is simple and intuitive.
@@ -86,7 +79,7 @@ reference="fig:amplicon-gui"}):
 6.  When finished, go to the result folder to check the result files.
 
 ![Steps for amplicon(s)
-analysis](figures/amplicon-gui.png){#fig:amplicon-gui
+analysis](doc/figures/amplicon-gui.png){#fig:amplicon-gui
 width="0.8\\linewidth"}
 
 Usage for WGS (whole genome sequencing) analysis
@@ -125,7 +118,7 @@ Analysis for WGS include steps
 
 6.  When finished, go to the result folder to check the result files.
 
-![Steps for WGS analysis](figures/wgs-gui.png){#fig:wgs-gui
+![Steps for WGS analysis](doc/figures/wgs-gui.png){#fig:wgs-gui
 width="0.8\\linewidth"}
 
 Input file format
@@ -170,7 +163,7 @@ In the result folder, the alignment of top count sequences will be
 given, as shown in fig[4](#fig:align){reference-type="ref"
 reference="fig:align"}.
 
-![Example of alignment plot](figures/top_alignment.png){#fig:align
+![Example of alignment plot](doc/figures/top_alignment.png){#fig:align
 width="\\textwidth"}
 
 ### Indel frequency along sequence
@@ -181,7 +174,7 @@ figure[5](#fig:indel-freq){reference-type="ref"
 reference="fig:indel-freq"}.
 
 ![Example of indel frequency along
-sequence](figures/freq-plot.png){#fig:indel-freq width="\\textwidth"}
+sequence](doc/figures/freq-plot.png){#fig:indel-freq width="\\textwidth"}
 
 ### Basic statistics
 
@@ -272,7 +265,7 @@ internally used tools in Additional Options tab
 reference="fig:additional-options"}).
 
 ![GUI of additional
-options](figures/additional_options.png){#fig:additional-options
+options](doc/figures/additional_options.png){#fig:additional-options
 width="\\textwidth"}
 
 Here are all available additional options for flash. Detailed additional
