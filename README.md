@@ -209,16 +209,18 @@ Download the source code, uncompressed it and change into the source
 code directory.
 
 On Linux:
-
+      make unix
       make linux
 
 On Mac:
-
+      make unix
       make mac
 
 On Windows:
-
       make windows
+      make win
+
+Then compressed GRACIOUS package in zip format will then be in bin/ folder.
 
 You also need fastp, flash, bwa, samtools, VarScan2 installed in bin
 folder.
