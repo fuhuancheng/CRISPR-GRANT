@@ -28,27 +28,27 @@ Download and install
 System requirements:
 
 -   Operating systems: Windows 7 or 10; macOS 10.13 or later; GNU/Linux
-    (Ubuntu 16.04 or later). The program had been tested on Windows 7,
-    Windows 10, macOS 10.13 (High Sierra), Ubuntu 16.04 and deepin
-    linux 20.
+    (such as Debian, openSUSE, Ubuntu, Deepin). The program had been
+    tested on Windows 7, Windows 10, macOS 10.13 (High Sierra), Debian
+    10, openSUSE, Ubuntu 16.04 and deepin linux 20.
 
 -   CPU: x86_64 CPUs (64 bit).
 
 -   RAM: at least 4 GB RAM, 8 GB is recommended. For very large or whole
     genome sequencing (WGS) dataset, larger RAM may be necessary.
 
--   Disk space: it depends on the sequencing data size. For WGS data of
+-   Disk usage: it depends on the sequencing data size. For WGS data of
     mouse (*Mus musculus*), as large as 500GB disk space would be
-    required.
+    required for one sample.
 
-Download the GRACIOUS package from website
+The usage of GRACIOUS is simple and intuitive. GRACIOUS was a
+self-contained software. You just need to download and open it. Download
+the GRACIOUS package from website
 (<https://github.com/fuhuancheng/GRACIOUS/releases>), uncompressed it,
 go to the folder and click to open the program. The GUI would look like
-Fig[1](#fig:mac-gui).
+Fig[1](#fig:mac-gui){reference-type="ref" reference="fig:mac-gui"}.
 
-![GUI example](doc/figures/mac-gui2.png)
-
-The usage of GRACIOUS is simple and intuitive.
+![GUI example](figures/gui4-mac.png)
 
 Usage for amplicon or pooled amplicon analysis
 ==============================================
@@ -62,7 +62,8 @@ Required files or inputs for analysis:
 -   Output folder for analysis results.
 
 Analysis for amplicon or pooled amplicons includes steps
-(Fig[2](#fig:amplicon-gui)):
+(Fig[2](#fig:amplicon-gui){reference-type="ref"
+reference="fig:amplicon-gui"}):
 
 1.  Press \"Browse\" button to select FASTQ file 1 and 2.
 
@@ -77,7 +78,7 @@ Analysis for amplicon or pooled amplicons includes steps
 6.  When finished, go to the result folder to check the result files.
 
 ![Steps for amplicon(s)
-analysis](doc/figures/amplicon-gui.png)
+analysis](figures/amplicon-gui2.png)
 
 Usage for WGS (whole genome sequencing) analysis
 ================================================
@@ -90,7 +91,9 @@ Required inputs for analysis:
 
 -   Output folder for analysis results.
 
--   A file containing specific regions.
+-   A file containing specific regions. Format:
+    chrome\[:start\[-end\]\], for example, chr1:42-2020, one region per
+    line.
 
 Since the reference genomes are generally huge, the genome reference
 files were not provided with the installer packages. However, it's easy
@@ -98,10 +101,10 @@ to download genome sequence for a variety of organisms from UCSC
 (<https://hgdownload.soe.ucsc.edu/downloads.html>) or NCBI
 (<https://www.ncbi.nlm.nih.gov/genome/>). The downloaded genome sequence
 should be in FASTA format (see
-section[4.1.2](#sec:fasta)).
+section[4.1.2](#sec:fasta){reference-type="ref" reference="sec:fasta"}).
 
 Analysis for WGS include steps
-(Fig[3](#fig:wgs-gui)):
+(Fig[3](#fig:wgs-gui){reference-type="ref" reference="fig:wgs-gui"}):
 
 1.  Press \"Browse\" button to select FASTQ file 1 and 2.
 
@@ -109,13 +112,15 @@ Analysis for WGS include steps
 
 3.  Press \"Browse\" button to select folder for result files.
 
-4.  Choose additional parameters if needed, or just leave it as default.
+4.  Press \"Browse\" button to select region file.
 
-5.  Press \"begin analysis\" button to begin analysis.
+5.  Choose additional parameters if needed, or just leave it as default.
 
-6.  When finished, go to the result folder to check the result files.
+6.  Press \"begin analysis\" button to begin analysis.
 
-![Steps for WGS analysis](doc/figures/wgs-gui.png)
+7.  When finished, go to the result folder to check the result files.
+
+![Steps for WGS analysis](figures/wgs-gui2.png)
 
 Input file format
 -----------------
@@ -125,7 +130,7 @@ Input file format
 FASTQ files (\*.fastq) or compressed FASTQ files (\*.fastq.gz) were both
 accepted.
 
-### FASTA: reference file format {#sec:fasta}
+### FASTA: reference file format 
 
 The reference file must be in FASTA file format, file extension is
 arbitrary. The detailed FASTA file format explaination could be found
@@ -141,11 +146,11 @@ the identifier. It is recommended that all lines of text be shorter than
 or equal to 80 characters in length. Below is an example sequence in
 FASTA format:
 
-    >XM_030254057.1 PREDICTED: Mus musculus actin, beta (Actb)
-    ATGCACTGAGGCACGGCAGGCCCAGAGCATCTCACCTGAAGCACCCTTCTTGCCTAAATCCAGCTTTCTG
-    TCACACTCTCCCAGAAGGAGGGGAGAGGGGGTAAAAAAATGCTGCACTGTGCGGCGAGGCCGGTGAGTGA
-    GCGACGCGGAGCCAATCAGCGCCCGCCGTTCCGAAAGTTGCCTTTTATGGCTCGAGTGGCCGCTGTGGCG
-    TCCTATAAAACCCGGCGGCGCAACGC...
+        >XM_030254057.1 PREDICTED: Mus musculus actin, beta (Actb)
+        ATGCACTGAGGCACGGCAGGCCCAGAGCATCTCACCTGAAGCACCCTTCTTGCCTAAATCCAGCTTTCTG
+        TCACACTCTCCCAGAAGGAGGGGAGAGGGGGTAAAAAAATGCTGCACTGTGCGGCGAGGCCGGTGAGTGA
+        GCGACGCGGAGCCAATCAGCGCCCGCCGTTCCGAAAGTTGCCTTTTATGGCTCGAGTGGCCGCTGTGGCG
+        TCCTATAAAACCCGGCGGCGCAACGC...
 
 In cases such as reference for amplicon pools, all the sequence names in
 the given reference file should **NOT** be in duplicate.
@@ -153,29 +158,60 @@ the given reference file should **NOT** be in duplicate.
 Result files
 ------------
 
+The resulting output files include top numbered reads alignment to
+reference, distribution of reads counts (total reads, mapped reads,
+modified and un-modified reads), frequency of indels at each position
+along the reference, etc
+(Table[1](#tab:result-file){reference-type="ref"
+reference="tab:result-file"}).
+
+::: 
+   Numbering          File name            Format                         Description
+  ----------- ------------------------- ------------ ------------------------------------------------------
+       0              QC-report             html             Quality control report of FASTQ files
+       1             readsCount           pdf, txt                   Number of reads types
+       2       Top_sequences_alignment   fasta, pdf       Sequence alignment of top reads to reference
+       3               varFreq            csv, pdf    Frequency of indels at each position along reference
+       4           Mapping_sorted           BAM               Sorted BAM file mapping to reference
+
+  : Descriptions of output files
+:::
+
+### QC (quality control) report
+
+The QC report was generated by fastp
+(<https://github.com/OpenGene/fastp>). Quality profiling for both before
+and after filtering of reads, such as number of total reads, percentage
+of qualified reads, were displayed in QC report.
+
 ### Alignment of top counts
 
 In the result folder, the alignment of top count sequences will be
-given, as shown in fig[4](#fig:align).
+given, as shown in fig[4](#fig:align){reference-type="ref"
+reference="fig:align"}.
 
-![Example of alignment plot](doc/figures/top_alignment.png)
+![Example of alignment plot](figures/top_alignment2.png)
 
 ### Indel frequency along sequence
 
 In the result folder, the plot of indel frequency along sequence will
 also be given, as shown in
-figure[5](#fig:indel-freq).
+Figure[5](#fig:indel-freq){reference-type="ref"
+reference="fig:indel-freq"}.
 
 ![Example of indel frequency along
-sequence](doc/figures/freq-plot.png)
+sequence](figures/freq-plot2.png)
 
-### Basic statistics
+### Use IGV to visualize mapping result
 
-Performance
-===========
+The resulting file of reads mapping to reference was saved to
+\"Mapping_sorted.bam\" file in BAM format (Table
+[1](#tab:result-file){reference-type="ref"
+reference="tab:result-file"}). The BAM file could be visualized using
+IGV (<http://igv.org/>) (Figure[6](#fig:igv-bam){reference-type="ref"
+reference="fig:igv-bam"}).
 
-The performance of GRACIOUS and other relating software was tested on
-Ubuntu 16.04 (CPU: Intel i7-8700K).
+![Use IGV to visualize BAM files](figures/igv-bam.png)
 
 Command line usage
 ==================
@@ -183,7 +219,8 @@ Command line usage
 GRACIOUS also provides command line usage for some situations when
 needed.
 
-    indel_analysis -1=FASTQ1/file/path -2=FASTQ2/file/path -r=reference/file/path -o=output/file/path -t=CPU_cores
+    indel_analysis -1=FASTQ1/file/path -2=FASTQ2/file/path -r=reference/file/path 
+    -o=output/file/path -t=CPU_cores
 
 Command \"indel_analysis -h\" would give more detailed help usage
 information.
@@ -199,67 +236,83 @@ Requirements:
 -   Nim (greater than Version 1.2.0). Please consult
     <https://nim-lang.org> for installation.
 
--   ggplotnim (greater than version 0.3.18). ggplotnim could be
+-   ggplotnim (greater than version 0.3.18,
+    <https://github.com/Vindaar/ggplotnim>). ggplotnim could be
     installed via `nimble install ggplotnim`.
 
--   ui (greater than version 0.9.4). ui could be installed via
-    `nimble install ui`.
+-   ui (greater than version 0.9.4, <https://github.com/nim-lang/ui>).
+    ui could be installed via `nimble install ui`.
 
 Download the source code, uncompressed it and change into the source
-code directory.
+code directory: `cd GRACIOUS`.
 
-On Linux:
-      make unix
-      make linux
+On Linux compile with: `make linux`. On Mac: `make mac`. On Windows:
+`make windows`.
 
-On Mac:
-      make unix
-      make mac
-
-On Windows:
-      make windows
-      make win
-
-Then compressed GRACIOUS package in zip format will then be in bin/ folder.
-
-You also need fastp, flash, bwa, samtools, VarScan2 installed in bin
-folder.
+You should also have executable fastp, flash, bwa, samtools and VarScan2
+binary files installed in bin folder.
 
 The resulting bin folder should be like below:
 
-      bin/
-      |-- bwa/
-      |-- flash/
-      |-- jre11/
-      |-- mafft/
-      |-- samtools/
-      |-- varscan2/
-      |-- csv_to_fasta
-      |-- fasta_to_plot
-      |-- fastp
-      |-- indel_analysis
-      |-- reads_count_plot
-      |-- sam_count
-      |-- varToCsv
-      |-- var_plot
-      |-- wgsSubRegion
+                                  indel_call_ui
+                                  bin/
+                                  |-- bwa/
+                                  |-- fastp/
+                                  |-- flash/
+                                  |-- jre11/
+                                  |-- mafft/
+                                  |-- samtools/
+                                  |-- varscan2/
+                                  |-- csv_to_fasta
+                                  |-- fasta_to_plot
+                                  |-- indel_analysis
+                                  |-- reads_count_plot
+                                  |-- sam_count
+                                  |-- snp_plot
+                                  |-- varToCsv
+                                  |-- var_plot
+                                  |-- wgsSubRegion
 
 Get help
 ========
 
 If you have any questions or encountered bugs when using GRACIOUS,
 please feel free to contact us by email
-([fuhuancheng\@foxmail.com](fuhuancheng@foxmail.com)).
+([fuhuancheng\@foxmail.com](fuhuancheng@foxmail.com)), or creating
+issues at <https://github.com/fuhuancheng/GRACIOUS>.
 
-Additional parameters for FLASH
-===============================
+License
+=======
+
+GRACIOUS is distributed under license of LICENSE except the tools
+internally used licensed originally. Licenses of tools and libraries
+used within GRACIOUS are listed below. Source codes of tools licensed
+under GPLv3 are provided within each tool's subfolder.
+
+::: 
+     Tools                 License
+  ----------- ----------------------------------
+     fastp                   MIT
+     FLASH                  GPLv3
+      bwa                   GPLv3
+   samtools                  MIT
+   VarScan2    Non-Profit Open Software License
+   ggplotnim                 MIT
+      ui                     MIT
+
+  : Licenses of tools and libraries used
+:::
 
 Additional options, if necessary, can be added and passed directly to
 internally used tools in Additional Options tab
-(Fig[6](#fig:additional-options)).
+(Fig[7](#fig:additional-options){reference-type="ref"
+reference="fig:additional-options"}).
 
 ![GUI of additional
-options](doc/figures/additional_options.png)
+options](figures/additional_options.png)
+
+Additional parameters for FLASH
+===============================
 
 Here are all available additional options for flash. Detailed additional
 parameters for FLASH can be accessed by execute command \"flash -h\" in
@@ -295,26 +348,6 @@ terminal.
                          numbers of correctly merged read pairs but at
                          the expense of higher numbers of incorrectly
                          merged read pairs.  Default: 0.25.
-
-    -O, --allow-outies      Also try combining read pairs in the "outie"
-                         orientation, e.g.
-
-                              Read 1: <-----------
-                              Read 2:       ------------>
-
-                         as opposed to only the "innie" orientation, e.g.
-
-                              Read 1:       <------------
-                              Read 2: ----------->
-
-                         FLASH uses the same parameters when trying each
-                         orientation.  If a read pair can be combined in
-                         both "innie" and "outie" orientations, the
-                         better-fitting one will be chosen using the same
-                         scoring algorithm that FLASH normally uses.
-
-                         This option also causes extra .innie and .outie
-                         histogram files to be produced.
 
     -p, --phred-offset=OFFSET
                          The smallest ASCII value of the characters used to
@@ -388,7 +421,8 @@ mapping:
             -r FLOAT      look for internal seeds inside a seed longer than {-k} * FLOAT [1.5]
             -y INT        seed occurrence for the 3rd round seeding [20]
             -c INT        skip seeds with more than INT occurrences [500]
-            -D FLOAT      drop chains shorter than FLOAT fraction of the longest overlapping chain [0.50]
+            -D FLOAT      drop chains shorter than FLOAT fraction of the longest 
+                          overlapping chain [0.50]
             -W INT        discard a chain if seeded bases shorter than INT [0]
             -m INT        perform at most INT rounds of mate rescues for each read [50]
             -S            skip mate rescue
@@ -396,7 +430,8 @@ mapping:
 
     Scoring options:
 
-            -A INT        score for a sequence match, which scales options -TdBOELU unless overridden [1]
+            -A INT        score for a sequence match, which scales options -TdBOELU 
+                          unless overridden [1]
             -B INT        penalty for a mismatch [4]
             -O INT[,INT]  gap open penalties for deletions and insertions [6,6]
             -E INT[,INT]  gap extension penalty; a gap of size k cost '{-O} + {-E}*k' [1,1]
@@ -413,13 +448,17 @@ mapping:
             -p            smart pairing (ignoring in2.fq)
             -R STR        read group header line such as '@RG\tID:foo\tSM:bar' [null]
             -H STR/FILE   insert STR to header if it starts with @; or insert lines in FILE [null]
-            -j            treat ALT contigs as part of the primary assembly (i.e. ignore <idxbase>.alt file)
-            -5            for split alignment, take the alignment with the smallest coordinate as primary
+            -j            treat ALT contigs as part of the primary assembly (i.e. ignore 
+                          <idxbase>.alt file)
+            -5            for split alignment, take the alignment with the smallest 
+                          coordinate as primary
             -q            don't modify mapQ of supplementary alignments
-            -K INT        process INT input bases in each batch regardless of nThreads (for reproducibility) []
+            -K INT        process INT input bases in each batch regardless of 
+                          nThreads (for reproducibility) []
             -v INT        verbosity level: 1=error, 2=warning, 3=message, 4+=debugging [3]
             -T INT        minimum score to output [30]
-            -h INT[,INT]  if there are <INT hits with score >80% of the max score, output all in XA [5,200]
+            -h INT[,INT]  if there are <INT hits with score >80% of the max score, 
+                          output all in XA [5,200]
             -a            output all alignments for SE or unpaired PE
             -C            append FASTA/FASTQ comment to SAM output
             -V            output the reference FASTA header in the XR tag
