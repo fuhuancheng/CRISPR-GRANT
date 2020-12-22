@@ -164,7 +164,7 @@ modified and un-modified reads), frequency of indels at each position
 along the reference, etc.
 
 |Numbering          |File name            |Format                         |Description|
------------ ------------------------- ------------ ------------------------------------------------------
+|----------- |------------------------- |------------ |------------------------------------------------------|
 |0              |QC-report             |html             |Quality control report of FASTQ files|
 |1             |readsCount           |pdf, txt                   |Number of reads types|
 |2       |Top_sequences_alignment   |fasta, pdf       |Sequence alignment of top reads to reference|
@@ -284,7 +284,7 @@ used within GRACIOUS are listed below. Source codes of tools licensed
 under GPLv3 are provided within each tool's subfolder.
 
 | Tools                 |License|
------------ ----------------------------------
+|----------- |----------------------------------|
 |fastp                   |MIT|
 |FLASH                  |GPLv3|
 |bwa                   |GPLv3|
