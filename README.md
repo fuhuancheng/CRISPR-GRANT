@@ -161,21 +161,15 @@ Result files
 The resulting output files include top numbered reads alignment to
 reference, distribution of reads counts (total reads, mapped reads,
 modified and un-modified reads), frequency of indels at each position
-along the reference, etc
-(Table[1](#tab:result-file){reference-type="ref"
-reference="tab:result-file"}).
+along the reference, etc.
 
-::: 
-   Numbering          File name            Format                         Description
-  ----------- ------------------------- ------------ ------------------------------------------------------
-       0              QC-report             html             Quality control report of FASTQ files
-       1             readsCount           pdf, txt                   Number of reads types
-       2       Top_sequences_alignment   fasta, pdf       Sequence alignment of top reads to reference
-       3               varFreq            csv, pdf    Frequency of indels at each position along reference
-       4           Mapping_sorted           BAM               Sorted BAM file mapping to reference
-
-  : Descriptions of output files
-:::
+|Numbering          |File name            |Format                         |Description|
+----------- ------------------------- ------------ ------------------------------------------------------
+|0              |QC-report             |html             |Quality control report of FASTQ files|
+|1             |readsCount           |pdf, txt                   |Number of reads types|
+|2       |Top_sequences_alignment   |fasta, pdf       |Sequence alignment of top reads to reference|
+|3               |varFreq            |csv, pdf    |Frequency of indels at each position along reference|
+|4           |Mapping_sorted           |BAM               |Sorted BAM file mapping to reference|
 
 ### QC (quality control) report
 
@@ -289,24 +283,18 @@ internally used licensed originally. Licenses of tools and libraries
 used within GRACIOUS are listed below. Source codes of tools licensed
 under GPLv3 are provided within each tool's subfolder.
 
-::: 
-     Tools                 License
-  ----------- ----------------------------------
-     fastp                   MIT
-     FLASH                  GPLv3
-      bwa                   GPLv3
-   samtools                  MIT
-   VarScan2    Non-Profit Open Software License
-   ggplotnim                 MIT
-      ui                     MIT
-
-  : Licenses of tools and libraries used
-:::
+| Tools                 |License|
+----------- ----------------------------------
+|fastp                   |MIT|
+|FLASH                  |GPLv3|
+|bwa                   |GPLv3|
+|samtools                  |MIT|
+|VarScan2    |Non-Profit Open Software License|
+|ggplotnim                 |MIT|
+|    ui                    |MIT|
 
 Additional options, if necessary, can be added and passed directly to
-internally used tools in Additional Options tab
-(Fig[7](#fig:additional-options){reference-type="ref"
-reference="fig:additional-options"}).
+internally used tools in Additional Options tab.
 
 ![GUI of additional
 options](doc/figures/additional_options.png)
