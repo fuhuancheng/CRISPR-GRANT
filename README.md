@@ -48,7 +48,7 @@ the GRACIOUS package from website
 go to the folder and click to open the program. The GUI would look like
 Fig[1](#fig:mac-gui){reference-type="ref" reference="fig:mac-gui"}.
 
-![GUI example](figures/gui4-mac.png)
+![GUI example](doc/figures/gui4-mac.png)
 
 Usage for amplicon or pooled amplicon analysis
 ==============================================
@@ -78,7 +78,7 @@ reference="fig:amplicon-gui"}):
 6.  When finished, go to the result folder to check the result files.
 
 ![Steps for amplicon(s)
-analysis](figures/amplicon-gui2.png)
+analysis](doc/figures/amplicon-gui2.png)
 
 Usage for WGS (whole genome sequencing) analysis
 ================================================
@@ -120,7 +120,7 @@ Analysis for WGS include steps
 
 7.  When finished, go to the result folder to check the result files.
 
-![Steps for WGS analysis](figures/wgs-gui2.png)
+![Steps for WGS analysis](doc/figures/wgs-gui2.png)
 
 Input file format
 -----------------
@@ -190,7 +190,7 @@ In the result folder, the alignment of top count sequences will be
 given, as shown in fig[4](#fig:align){reference-type="ref"
 reference="fig:align"}.
 
-![Example of alignment plot](figures/top_alignment2.png)
+![Example of alignment plot](doc/figures/top_alignment2.png)
 
 ### Indel frequency along sequence
 
@@ -200,7 +200,7 @@ Figure[5](#fig:indel-freq){reference-type="ref"
 reference="fig:indel-freq"}.
 
 ![Example of indel frequency along
-sequence](figures/freq-plot2.png)
+sequence](doc/figures/freq-plot2.png)
 
 ### Use IGV to visualize mapping result
 
@@ -211,7 +211,7 @@ reference="tab:result-file"}). The BAM file could be visualized using
 IGV (<http://igv.org/>) (Figure[6](#fig:igv-bam){reference-type="ref"
 reference="fig:igv-bam"}).
 
-![Use IGV to visualize BAM files](figures/igv-bam.png)
+![Use IGV to visualize BAM files](doc/figures/igv-bam.png)
 
 Command line usage
 ==================
@@ -309,7 +309,7 @@ internally used tools in Additional Options tab
 reference="fig:additional-options"}).
 
 ![GUI of additional
-options](figures/additional_options.png)
+options](doc/figures/additional_options.png)
 
 Additional parameters for FLASH
 ===============================
