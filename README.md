@@ -31,7 +31,7 @@ it, go to the folder (**The path should not contain non-English letters,
 blank or other invalid characters.**) and click to open the program. The
 GUI would look like Figure below.
 
-![GUI example](figures/gui4-mac.png)
+![GUI example](doc/figures/gui4-mac.png)
 
 System requirements:
 
@@ -80,7 +80,7 @@ Analysis for amplicon or pooled amplicons includes steps:
 7.  When completed, go to the result folder to check the result files.
 
 ![Steps for amplicon(s)
-analysis](figures/amplicon-gui3.png)
+analysis](doc/figures/amplicon-gui3.png)
 
 # Usage for WGS (whole genome sequencing) analysis
 
@@ -121,7 +121,7 @@ Analysis for WGS include steps:
 
 8.  When completed, go to the result folder to check the result files.
 
-![Steps for WGS analysis](figures/wgs-gui3.png)
+![Steps for WGS analysis](doc/figures/wgs-gui3.png)
 
 ## Input file format
 
@@ -184,7 +184,7 @@ of qualified reads, were displayed in QC report.
 In the result folder, the alignment of top count sequences will be
 given, as shown in fig.
 
-![Example of alignment plot](figures/top_alignment2.png)
+![Example of alignment plot](doc/figures/top_alignment2.png)
 
 ### Indel frequency along sequence
 
@@ -201,7 +201,7 @@ The resulting file of reads mapping to reference was saved to
 \"Mapping_sorted.bam\" file in BAM format. The BAM file could be visualized using
 IGV (<http://igv.org/>).
 
-![Use IGV to visualize BAM files](figures/igv-bam.png)
+![Use IGV to visualize BAM files](doc/figures/igv-bam.png)
 
 # Command line usage
 
@@ -290,7 +290,7 @@ Additional options, if necessary, can be added and passed directly to
 internally used tools in Additional Options tab.
 
 ![GUI of additional
-options](figures/additional_options.png)
+options](doc/figures/additional_options.png)
 
 # Additional parameters for FLASH
 
