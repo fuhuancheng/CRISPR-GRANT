@@ -1,17 +1,16 @@
-Introduction
-============
+# Introduction
 
-GRACIOUS, a stand-alone graphical CRISPR indel analysis tool, could be
-easily installed for multi-platform including Linux, Windows, and MacOS.
-GRACIOUS offered a straightforward GUI by simple click-and-run for
-genome editing analysis of single or pooled amplicons and one-step
-analysis for whole-genome sequencing. Moreover, it also exhibited
-shorter run-time compared with tools currently available. Therefore,
-GRACIOUS is a valuable addition to the current CRISPR toolkits that
-significantly lower the barrier for wet-lab researchers to conduct indel
-analysis from large NGS datasets.
+CRISPR-GRANT, a stand-alone graphical CRISPR indel analysis tool, could
+be easily installed for multi-platform including Linux, Windows, and
+MacOS. CRISPR-GRANT offered a straightforward GUI by simple
+click-and-run for genome editing analysis of single or pooled amplicons
+and one-step analysis for whole-genome sequencing. Moreover, it also
+exhibited shorter run-time compared with tools currently available.
+Therefore, CRISPR-GRANT is a valuable addition to the current CRISPR
+toolkits that significantly lower the barrier for wet-lab researchers to
+conduct indel analysis from large NGS datasets.
 
-GRACIOUS requires input from raw FASTQ sequencing data and reference
+CRISPR-GRANT requires input from raw FASTQ sequencing data and reference
 sequence in FASTA format. Fastp will be first used for quality check of
 the input data. After that, qualified reads will be mapped to the
 reference sequence by BWA-MEM. The resulting SAM file was then converted
@@ -22,15 +21,24 @@ and variants, and publication-quality plots for the number of modified
 and unmodified reads, alignment of top numbered reads to reference, and
 the frequency of indels at each position.
 
-Download and install
-====================
+# Download and install
+
+The usage of CRISPR-GRANT is simple and intuitive. CRISPR-GRANT was a
+self-contained software. You just need to download and open it. Download
+the CRISPR-GRANT package from website
+(<https://github.com/fuhuancheng/CRISPR-GRANT/releases>), uncompressed
+it, go to the folder (**The path should not contain non-English letters,
+blank or other invalid characters.**) and click to open the program. The
+GUI would look like Figure below.
+
+![GUI example](figures/gui4-mac.png)
 
 System requirements:
 
 -   Operating systems: Windows 7 or 10; macOS 10.13 or later; GNU/Linux
     (such as Debian, openSUSE, Ubuntu, Deepin). The program had been
     tested on Windows 7, Windows 10, macOS 10.13 (High Sierra), Debian
-    10, openSUSE, Ubuntu 16.04 and deepin linux 20.
+    10, openSUSE, Ubuntu 16.04 and Deepin linux 20.
 
 -   CPU: x86_64 CPUs (64 bit).
 
@@ -41,17 +49,7 @@ System requirements:
     mouse (*Mus musculus*), as large as 500GB disk space would be
     required for one sample.
 
-The usage of GRACIOUS is simple and intuitive. GRACIOUS was a
-self-contained software. You just need to download and open it. Download
-the GRACIOUS package from website
-(<https://github.com/fuhuancheng/GRACIOUS/releases>), uncompressed it,
-go to the folder and click to open the program. The GUI would look like
-Fig[1](#fig:mac-gui){reference-type="ref" reference="fig:mac-gui"}.
-
-![GUI example](doc/figures/gui4-mac.png)
-
-Usage for amplicon or pooled amplicon analysis
-==============================================
+# Usage for amplicon or pooled amplicon analysis
 
 Required files or inputs for analysis:
 
@@ -61,27 +59,30 @@ Required files or inputs for analysis:
 
 -   Output folder for analysis results.
 
-Analysis for amplicon or pooled amplicons includes steps
-(Fig[2](#fig:amplicon-gui){reference-type="ref"
-reference="fig:amplicon-gui"}):
+Analysis for amplicon or pooled amplicons includes steps:
 
-1.  Press \"Browse\" button to select FASTQ file 1 and 2.
+1.  Press \"Browse\" button to select FASTQ file 1 and 2. (**The file
+    path should not contain non-English letters, blank or other invalid
+    characters. Same to reference file and output folder, etc below.**)
 
 2.  Press \"Browse\" button to select reference file in FASTA format.
 
-3.  Press \"Browse\" button to select folder for result files.
+3.  Press \"Browse\" button to select or input output folder name for
+    result files.
 
-4.  Choose additional parameters if needed, or just leave it as default.
+4.  Choose \"Amplicon(s)\" in \"Analysis type\" field. Check
+    \"Substitution\" if you want to plot numbers of base substitution.
 
-5.  Press \"begin analysis\" button to begin analysis.
+5.  Choose additional parameters if needed, or just leave it as default.
 
-6.  When finished, go to the result folder to check the result files.
+6.  Press \"Begin analysis\" button to begin analysis.
+
+7.  When completed, go to the result folder to check the result files.
 
 ![Steps for amplicon(s)
-analysis](doc/figures/amplicon-gui2.png)
+analysis](figures/amplicon-gui3.png)
 
-Usage for WGS (whole genome sequencing) analysis
-================================================
+# Usage for WGS (whole genome sequencing) analysis
 
 Required inputs for analysis:
 
@@ -100,11 +101,9 @@ files were not provided with the installer packages. However, it's easy
 to download genome sequence for a variety of organisms from UCSC
 (<https://hgdownload.soe.ucsc.edu/downloads.html>) or NCBI
 (<https://www.ncbi.nlm.nih.gov/genome/>). The downloaded genome sequence
-should be in FASTA format (see
-section[4.1.2](#sec:fasta){reference-type="ref" reference="sec:fasta"}).
+should be in FASTA format.
 
-Analysis for WGS include steps
-(Fig[3](#fig:wgs-gui){reference-type="ref" reference="fig:wgs-gui"}):
+Analysis for WGS include steps:
 
 1.  Press \"Browse\" button to select FASTQ file 1 and 2.
 
@@ -114,23 +113,24 @@ Analysis for WGS include steps
 
 4.  Press \"Browse\" button to select region file.
 
-5.  Choose additional parameters if needed, or just leave it as default.
+5.  Choose \"Whole Genome Sequencing\" in \"Analysis type\" field.
 
-6.  Press \"begin analysis\" button to begin analysis.
+6.  Choose additional parameters if needed, or just leave it as default.
 
-7.  When finished, go to the result folder to check the result files.
+7.  Press \"Begin analysis\" button to begin analysis.
 
-![Steps for WGS analysis](doc/figures/wgs-gui2.png)
+8.  When completed, go to the result folder to check the result files.
 
-Input file format
------------------
+![Steps for WGS analysis](figures/wgs-gui3.png)
+
+## Input file format
 
 ### FASTQ: sequencing file format
 
 FASTQ files (\*.fastq) or compressed FASTQ files (\*.fastq.gz) were both
 accepted.
 
-### FASTA: reference file format 
+### FASTA: reference file format
 
 The reference file must be in FASTA file format, file extension is
 arbitrary. The detailed FASTA file format explaination could be found
@@ -143,20 +143,21 @@ the beginning. The word following the \"\>\" symbol is the identifier of
 the sequence, and the rest of the line is the description (optional).
 There should be **NO** space between the \"\>\" and the first letter of
 the identifier. It is recommended that all lines of text be shorter than
-or equal to 80 characters in length. Below is an example sequence in
-FASTA format:
+or equal to 80 characters in length. Below is an example sequence in FASTA format:
 
-        >XM_030254057.1 PREDICTED: Mus musculus actin, beta (Actb)
-        ATGCACTGAGGCACGGCAGGCCCAGAGCATCTCACCTGAAGCACCCTTCTTGCCTAAATCCAGCTTTCTG
-        TCACACTCTCCCAGAAGGAGGGGAGAGGGGGTAAAAAAATGCTGCACTGTGCGGCGAGGCCGGTGAGTGA
-        GCGACGCGGAGCCAATCAGCGCCCGCCGTTCCGAAAGTTGCCTTTTATGGCTCGAGTGGCCGCTGTGGCG
-        TCCTATAAAACCCGGCGGCGCAACGC...
+```
+>Sequence-name1
+ATGCACTGAGGCACGGCAGGCCCAGAGCATCTCACCTGAAGCACCCTTCTTGCCTAAATCCAGCTTTCTG
+TCACACTCTCCCAGAAGGAGGGGAGAGGGGGTAAAAAAATGCTGCACTGTGCGGCG
+>Sequence-name2
+GCGACGCGGAGCCAATCAGCGCCCGCCGTTCCGAAAGTTGCCTTTTATGGCTCGAGTGGCCGCTGTGGCG
+TCCTATAAAACCCGGCGGCGCAACGC...
+```
 
 In cases such as reference for amplicon pools, all the sequence names in
 the given reference file should **NOT** be in duplicate.
 
-Result files
-------------
+## Result files
 
 The resulting output files include top numbered reads alignment to
 reference, distribution of reads counts (total reads, mapped reads,
@@ -181,46 +182,40 @@ of qualified reads, were displayed in QC report.
 ### Alignment of top counts
 
 In the result folder, the alignment of top count sequences will be
-given, as shown in fig[4](#fig:align){reference-type="ref"
-reference="fig:align"}.
+given, as shown in fig.
 
-![Example of alignment plot](doc/figures/top_alignment2.png)
+![Example of alignment plot](figures/top_alignment2.png)
 
 ### Indel frequency along sequence
 
 In the result folder, the plot of indel frequency along sequence will
 also be given, as shown in
-Figure[5](#fig:indel-freq){reference-type="ref"
-reference="fig:indel-freq"}.
+Figure below.
 
 ![Example of indel frequency along
-sequence](doc/figures/freq-plot2.png)
+sequence]
 
 ### Use IGV to visualize mapping result
 
 The resulting file of reads mapping to reference was saved to
-\"Mapping_sorted.bam\" file in BAM format (Table
-[1](#tab:result-file){reference-type="ref"
-reference="tab:result-file"}). The BAM file could be visualized using
-IGV (<http://igv.org/>) (Figure[6](#fig:igv-bam){reference-type="ref"
-reference="fig:igv-bam"}).
+\"Mapping_sorted.bam\" file in BAM format. The BAM file could be visualized using
+IGV (<http://igv.org/>).
 
-![Use IGV to visualize BAM files](doc/figures/igv-bam.png)
+![Use IGV to visualize BAM files](figures/igv-bam.png)
 
-Command line usage
-==================
+# Command line usage
 
-GRACIOUS also provides command line usage for some situations when
+CRISPR-GRANT also provides command line usage for some situations when
 needed.
 
-    indel_analysis -1=FASTQ1/file/path -2=FASTQ2/file/path -r=reference/file/path 
-    -o=output/file/path -t=CPU_cores
+```bash
+indel_analysis -1=FASTQ1/file/path -2=FASTQ2/file/path -r=reference/file/path -o=output/file/path -t=CPU_cores
+```
 
 Command \"indel_analysis -h\" would give more detailed help usage
 information.
 
-Compilation
-===========
+# Compilation
 
 Requirements:
 
@@ -238,7 +233,7 @@ Requirements:
     ui could be installed via `nimble install ui`.
 
 Download the source code, uncompressed it and change into the source
-code directory: `cd GRACIOUS`.
+code directory: `cd CRISPR-GRANT`.
 
 On Linux compile with: `make linux`. On Mac: `make mac`. On Windows:
 `make windows`.
@@ -248,40 +243,38 @@ binary files installed in bin folder.
 
 The resulting bin folder should be like below:
 
-                                  indel_call_ui
-                                  bin/
-                                  |-- bwa/
-                                  |-- fastp/
-                                  |-- flash/
-                                  |-- jre11/
-                                  |-- mafft/
-                                  |-- samtools/
-                                  |-- varscan2/
-                                  |-- csv_to_fasta
-                                  |-- fasta_to_plot
-                                  |-- indel_analysis
-                                  |-- reads_count_plot
-                                  |-- sam_count
-                                  |-- snp_plot
-                                  |-- varToCsv
-                                  |-- var_plot
-                                  |-- wgsSubRegion
+        indel_call_ui
+        bin/
+        |-- bwa/
+        |-- fastp/
+        |-- flash/
+        |-- jre11/
+        |-- mafft/
+        |-- samtools/
+        |-- varscan2/
+        |-- csv_to_fasta
+        |-- fasta_to_plot
+        |-- indel_analysis
+        |-- reads_count_plot
+        |-- sam_count
+        |-- snp_plot
+        |-- varToCsv
+        |-- var_plot
+        |-- wgsSubRegion
 
-Get help
-========
+# Get help
 
-If you have any questions or encountered bugs when using GRACIOUS,
+If you have any questions or encountered bugs when using CRISPR-GRANT,
 please feel free to contact us by email
 ([fuhuancheng\@foxmail.com](fuhuancheng@foxmail.com)), or creating
-issues at <https://github.com/fuhuancheng/GRACIOUS>.
+issues at <https://github.com/fuhuancheng/CRISPR-GRANT>.
 
-License
-=======
+# License
 
-GRACIOUS is distributed under license of LICENSE except the tools
+CRISPR-GRANT is distributed under license of GPLv3 LICENSE except the tools
 internally used licensed originally. Licenses of tools and libraries
-used within GRACIOUS are listed below. Source codes of tools licensed
-under GPLv3 are provided within each tool's subfolder.
+used within CRISPR-GRANT are listed below. Source codes of tools
+licensed under GPLv3 are provided within each tool's subfolder.
 
 | Tools                 |License|
 |----------- |----------------------------------|
@@ -297,10 +290,9 @@ Additional options, if necessary, can be added and passed directly to
 internally used tools in Additional Options tab.
 
 ![GUI of additional
-options](doc/figures/additional_options.png)
+options](figures/additional_options.png)
 
-Additional parameters for FLASH
-===============================
+# Additional parameters for FLASH
 
 Here are all available additional options for flash. Detailed additional
 parameters for FLASH can be accessed by execute command \"flash -h\" in
@@ -396,8 +388,7 @@ terminal.
                          still passed in addition to explicitly specified
                          arguments.)
 
-Additional parameters for BWA
-=============================
+# Additional parameters for BWA
 
 Additional parameters for FLASH can be accessed by execute command \"bwa
 mem\" in terminal. Here are all available additional options for bwa
@@ -457,8 +448,7 @@ mapping:
                           (4 sigma from the mean if absent) and min of the insert size distribution.
                           FR orientation only. [inferred]
 
-Additional parameters for VarScan2
-==================================
+# Additional parameters for VarScan2
 
 Additional parameters for FLASH can be accessed by execute command
 \"java -jar VarScan.jar\" in terminal. Here are all available additional
