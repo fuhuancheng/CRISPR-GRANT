@@ -235,7 +235,7 @@ Requirements:
 Download the source code, uncompressed it and change into the source
 code directory: `cd CRISPR-GRANT`.
 
-On Linux compile with: `make linux`. On Mac: `make mac`. On Windows:
+On Linux compile with: `make unix`. On Mac: `make mac`. On Windows:
 `make windows`.
 
 You should also have executable fastp, flash, bwa, samtools and VarScan2
