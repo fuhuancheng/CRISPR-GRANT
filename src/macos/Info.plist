@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>CFBundleGetInfoString</key>
-  <string>CRISPR indel analysis</string>
+  <string>CRISPR-GRANT</string>
   <key>CFBundleExecutable</key>
   <string>indel_call_ui</string>
   <key>CFBundleIdentifier</key>
