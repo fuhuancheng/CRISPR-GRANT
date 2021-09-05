@@ -31,7 +31,7 @@ it, go to the folder (**The path should not contain non-English letters,
 blank or other invalid characters.**) and click to open the program. The
 GUI would look like Figure below.
 
-![GUI example](doc/figures/gui4-mac.png)
+![GUI example](doc/figures/gui-mac.png)
 
 System requirements:
 
