@@ -180,15 +180,13 @@ var qc_score = newSpinbox(min = PhredScore[0], max = PhredScore[1])
 qc_score.value = 30
 qc_trim.add(qc_score, false)
 
-# var trim_radio = newVerticalBox(true)
-# qc_trim.add(trim_radio)
-
-# trim_radio.add(newLabel("Trim"))
-# qc_trim.add(newLabel(""), true)
-# var trim = newCheckbox("Trim")
-# # trim.add("Yes")
-# # trim.add("No")
-# qc_trim.add(trim, true)
+# if disabe default trim provided by fastp
+var trim = newHorizontalBox(true)
+param_list.add(trim)
+trim.add(newLabel("Disable adapter trimming (enabled by default)"))
+trim.add(newLabel(""), true)
+var trim_disable = newCheckbox("Disable")
+trim.add(trim_disable, true)
 
 # threads
 # detect total CPU cores
@@ -340,11 +338,19 @@ proc call_indel_analysis() =
     indel_analysis = fmt"{bin_dir}wgsSubRegion"
     if regionFile.text != "":
       indel_analysis &= &" --region={regionFile.text} "
-  indel_analysis &= fmt" -1={fastq1_name.text} -r={ref_entry.text} -t={thread.value} -o={output_dir.text} "
+  indel_analysis &= fmt" -1={fastq1_name.text} -r={ref_entry.text} -o={output_dir.text} -q={qc_score.value} -t={thread.value} -n={top_reads.value} "
   if fastq2_name.text != "":
     indel_analysis &= &" -2={fastq2_name.text} "
+  
+  # if disable adapter trimming is checked, add the option to fastpArgs
+  var fastpOpt = ""
+  if trim_disable.checked:
+    fastpOpt &= " --disable_adapter_trimming "
   if fastpArgs.text != "":
-    indel_analysis &= &" --fastp=\"{fastpArgs.text}\" "
+    fastpOpt &= fastpArgs.text
+  if fastpOpt != "":
+    indel_analysis &= &" --fastp=\"{fastpOpt}\" "
+  
   if flashArgs.text != "":
     indel_analysis &= &" --flash=\"{flashArgs.text}\" "
   if bwaArgs.text != "":
