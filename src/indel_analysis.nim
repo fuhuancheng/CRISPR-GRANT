@@ -22,7 +22,7 @@ This tool will mapping indel amplicons to reference library, and output basic st
 
 Usage:
 
-indel_analysis -1:fastq-1.gz -2:fastq-2.gz -r:reference -o:output 
+indel_analysis -1:fastq-1.gz -2:fastq-2.gz -r:reference -o:output
 
     -h, --help       get this help and exit.
     -1               fastq file 1.
@@ -205,6 +205,9 @@ var
   # use samtools and varscan2 for calculating indel ratio along sequence
   samSort = &"{bin_dir}samtools/samtools sort --threads {threads} -l 4 -O BAM -o {output_dir}{outputFileNames.bam}.bam {output_dir}{outputFileNames.sam}.sam"
 
+  # bam index
+  bamIndex = &"{bin_dir}samtools/samtools index -@ {threads} {output_dir}{outputFileNames.bam}.bam"
+
   mpileup = &"{bin_dir}samtools/samtools mpileup -f {reference} -o {output_dir}{output}.mpileup {output_dir}{outputFileNames.bam}.bam"
 
   callIndel = &"{java} -jar {bin_dir}varscan2/VarScan2.jar pileup2cns {output_dir}{output}.mpileup --min-avg-qual {phred} --p-value 0.05 {varscanArgs} > {output_dir}{output}.var"
@@ -284,6 +287,7 @@ extCall(mapping, analysis_log)
 extCall(seq_count, analysis_log)
 extCall(readsPlot, analysis_log)
 extCall(samSort, analysis_log)
+extCall(bamIndex, analysis_log)
 extCall(mpileup, analysis_log)
 when defined(windows):
   extShellCall(callIndel, analysis_log)
